@@ -1,0 +1,52 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-lotr",
+  "namespace": "tap_lotr",
+  "variant": "mattarderne",
+  "label": "The One API",
+  "docs": "https://hub.meltano.com/extractors/tap-lotr--mattarderne",
+  "repo": "https://github.com/mattarderne/tap-lotr",
+  "pip_url": "git+https://github.com/mattarderne/tap-lotr.git",
+  "description": "Lord of the Rings API",
+  "logo_url": "https://hub.meltano.com/assets/logos/extractors/lotr.png",
+  "capabilities": [
+    "about",
+    "catalog",
+    "discover",
+    "state",
+    "stream-maps"
+  ],
+  "settings_group_validation": [
+    [
+      "api_key"
+    ]
+  ],
+  "settings": [
+    {
+      "name": "api_key",
+      "kind": "string",
+      "label": "API Key",
+      "description": "The token to authenticate against the API service",
+      "sensitive": true
+    },
+    {
+      "name": "api_url",
+      "kind": "string",
+      "value": "https://api.mysample.com",
+      "label": "API URL",
+      "description": "The url for the API service"
+    },
+    {
+      "name": "project_ids",
+      "kind": "array",
+      "label": "Project IDs",
+      "description": "Project IDs to replicate"
+    },
+    {
+      "name": "start_date",
+      "kind": "date_iso8601",
+      "label": "Start Date",
+      "description": "The earliest record date to sync"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+version: 1
+default_environment: dev
+project_id: 76dfadb6-448a-42d6-a655-eeb36e725356
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-lotr
+    variant: mattarderne
+    pip_url: git+https://github.com/mattarderne/tap-lotr.git
+    config:
+      api_url: https://the-one-api.dev/v2
+      project_ids:
+      - book
+  loaders:
+  - name: target-sqlite
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/target-sqlite.git
